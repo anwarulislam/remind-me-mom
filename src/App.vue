@@ -98,8 +98,9 @@ const isFarFromDistance = () => {
         long: position.coords.longitude,
       };
 
-      currentLocation.lat = 23.772016493428918;
-      currentLocation.long = 90.39357741923828;
+      // For testing
+      // currentLocation.lat = 23.772016493428918;
+      // currentLocation.long = 90.39357741923828;
 
       const currentDistance = calculateDistance(location, currentLocation);
 
@@ -162,14 +163,16 @@ const requestPermission = () => {
 
 onMounted(() => {
   requestPermission().then((isGranted) => {
-    hasPermission.value = true;
     console.log("Permission granted: ", isGranted);
     if (isGranted) {
+      hasPermission.value = true;
       const prevSettings = localStorage.getItem(SETTINGS_KEY);
       if (prevSettings) {
         settings.value = JSON.parse(prevSettings);
         startTracking();
       }
+    } else {
+      hasPermission.value = false;
     }
   });
 });
