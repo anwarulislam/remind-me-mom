@@ -15,9 +15,9 @@ export const PWAConfig: Partial<VitePWAOptions> = {
     theme_color: "#333333",
     icons: [
       {
-        src: "pwa-192x192.png",
+        src: "pwa-192x192.jpg",
         sizes: "192x192",
-        type: "image/png",
+        type: "image/jpg",
       },
       {
         src: "pwa-512x512.png",
