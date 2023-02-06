@@ -7,6 +7,7 @@
   <div>
     <label for="intervalTime">Select Interval Time (in seconds):</label>
     <select id="intervalTime" v-model="settings.intervalTime">
+      <option :value="1">1 second</option>
       <option :value="15">15 seconds</option>
       <option :value="30">30 seconds</option>
       <option :value="60">1 minute</option>
@@ -17,16 +18,22 @@
     </select>
   </div>
 
-  <button @click="emits('trackData', settings)">Track Me</button>
+  <button @click="emits('trackData', settings)" :disabled="disabled">
+    <slot></slot>
+  </button>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 
+defineProps<{
+  disabled: boolean;
+}>();
+
 const emits = defineEmits(["trackData"]);
 
 const settings = ref({
   distance: 150,
-  intervalTime: 15,
+  intervalTime: 1,
 });
 </script>

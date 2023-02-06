@@ -10,10 +10,8 @@ type Location = {
  * @returns {number} distance in feet
  */
 export const calculateDistance = (location1: Location, location2: Location) => {
-  const lat1 = location1.lat;
-  const lat2 = location2.lat;
-  const lon1 = location1.long;
-  const lon2 = location2.long;
+  const { lat: lat1, long: lon1 } = JSON.parse(JSON.stringify(location1));
+  const { lat: lat2, long: lon2 } = JSON.parse(JSON.stringify(location2));
 
   // console.log({ lat1, lon1 }, { lat2, lon2 });
 
@@ -37,5 +35,5 @@ export const calculateDistance = (location1: Location, location2: Location) => {
   dist = dist * 60 * 1.1515;
 
   // feet
-  return dist * 5280;
+  return Math.round(dist * 5280);
 };
