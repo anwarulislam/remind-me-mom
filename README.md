@@ -1,46 +1,32 @@
-# remindmemom
+# Remind Me Mom
 
-This template should help get you started developing with Vue 3 in Vite.
+Remind Me Mom is a simple web app that allows you to send yourself a notification on your phone when you are out of the house and you need to remember something that your mom told you to do.
 
-## Recommended IDE Setup
+## How to use
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+1. Go to [remindmemom](anwaar.me/remind-me-mom)
+2. Give permission to send notifications and track your location
+3. Input distance in feet
+4. Input interval time for notifications
+5. Click "Track Me"
+6. Leave the page open and go about your business
 
-## Type Support for `.vue` Imports in TS
+When you are out of the specified distance, you will receive a notification on your phone.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## How it works
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Remind Me Mom uses the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) to track your location. When you are out of the specified distance, it will send you a notification. It will also send you a notification every interval time.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Why?
 
-## Customize configuration
+Let's think about the scenario where you are out of the house and your mom tells you to do something. You don't have a pen and paper with you, so you forget. Remind Me Mom solve this problem by allowing you to send yourself a notification on your phone when you are out of the house and you need to remember something that your mom told you to do.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## How to contribute
 
-## Project Setup
+1. Fork the repo
+2. Make your changes
+3. Submit a pull request
 
-```sh
-npm install
-```
+## License
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+[MIT](https://choosealicense.com/licenses/mit/)
